@@ -1,6 +1,7 @@
 env  = "dev"
 
-component={
+component ={
+
   frontend = {}
   mongodb={}
   catalogue={}
@@ -12,4 +13,5 @@ component={
   rabbitmq={}
   payment={}
   dispatch={}
+
 }
