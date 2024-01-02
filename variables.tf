@@ -1,5 +1,3 @@
 variable "env" {}
 
-variable "tags"{
-
-}
+variable "tags"{}
