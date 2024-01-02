@@ -1,2 +1,5 @@
 variable "env" {}
 
+variable "tags"{
+
+}

@@ -38,7 +38,7 @@ component ={
 
 }
 
-tags={
+tags = {
   company= "Xyz company"
   business= "ecommerce"
   business_unit= "retail"
