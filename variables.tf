@@ -4,4 +4,3 @@ variable "tags"{
   default = {}
 }
 variable "vpc" {}
-variable "subnets" {}
