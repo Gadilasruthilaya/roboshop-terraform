@@ -16,5 +16,14 @@ module "vpc"{
   env = var.env
   subnets = each.value["subnets"]
   tags = var.tags
+  default_vpc_id = var.default_vpc_id
+}
+
+module "app"{
+  source = "git::https://github.com/Gadilasruthilaya/tf-module-app.git"
+  env = var.env
+  component = test
+  subnet_id = lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), "app" , null), "subnet_ids",null)[0]
+  vpc_id = lookup(lookup(module.vpc, "main", null ), vpc_id , null)
 }
 
