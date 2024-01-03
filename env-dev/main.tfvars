@@ -6,7 +6,7 @@ component ={
     tags = { Monitor ="true", env="dev"}
   }
   mongodb={
-    tags = { Monitor ="true", env="dev"}
+    tags = { env="dev"}
   }
   catalogue={
     tags = { Monitor ="true", env="dev"}
