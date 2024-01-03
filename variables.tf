@@ -9,4 +9,3 @@ variable "default_vpc_id" {
 }
 
 
-variable "vpc_id" {}
