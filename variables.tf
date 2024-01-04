@@ -4,9 +4,8 @@ variable "tags"{
   default = {}
 }
 variable "vpc" {}
-variable "default_vpc_id" {
-  default = "vpc-0785c748739da1093"
-}
+variable "default_vpc_id" {}
 
 
 variable "default_route_id" {}
+variable "rabbitmq" {}

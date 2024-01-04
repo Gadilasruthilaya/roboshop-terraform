@@ -29,3 +29,14 @@ module "app"{
   vpc_id = lookup(lookup(module.vpc, "main", null ), "vpc_id" , null)
 }
 
+module "rabbitmq"{
+  source = "git::https://github.com/Gadilasruthilaya/tf-module-rabbitmq.git"
+  for_each = var.rabbitmq
+  env = var.env
+  tags = var.tags
+  component = each.value["component"]
+  instance_type = each.value["instance_type"]
+  vpc_id = lookup(lookup(module.vpc, "main", null ), "vpc_id" , null)
+  sg_subnet_id = lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), "app" , null), "cidr_block",null)[0]
+}
+

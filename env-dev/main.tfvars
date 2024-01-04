@@ -66,4 +66,12 @@ vpc = {
   }
 }
 
+default_vpc_id = "vpc-0785c748739da1093"
 default_route_id= "rtb-007cec02789047c57"
+
+rabbitmq = {
+  main = {
+    instance_type = " t3.small"
+    component = "rabbitmq"
+  }
+}
