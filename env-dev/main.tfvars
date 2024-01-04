@@ -65,3 +65,5 @@ vpc = {
     }
   }
 }
+
+default_route_id= "rtb-007cec02789047c57"

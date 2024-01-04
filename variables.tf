@@ -9,3 +9,4 @@ variable "default_vpc_id" {
 }
 
 
+variable "default_route_id" {}

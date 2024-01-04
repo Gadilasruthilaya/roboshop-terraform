@@ -17,6 +17,7 @@ module "vpc"{
   subnets = each.value["subnets"]
   tags = var.tags
   default_vpc_id = var.default_vpc_id
+  default_route_id = var.default_route_id
 }
 
 module "app"{
