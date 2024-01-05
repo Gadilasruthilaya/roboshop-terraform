@@ -73,7 +73,7 @@ allow_ssh_cidr = ["172.31.87.103/32"]
 
 rabbitmq = {
   main = {
-    instance_type = " t3.Small"
+    instance_type = "t3.small"
     component = "rabbitmq"
   }
 }
