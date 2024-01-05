@@ -12,3 +12,4 @@ variable "rabbitmq" {}
 
 variable "allow_ssh_cidr" {}
 variable "zone_id" {}
+variable "sg_subnet_cidr" {}
