@@ -82,9 +82,9 @@ rabbitmq = {
 
 rds ={
   main ={
-    component = "mysql"
     engine                  = "aurora-mysql"
     engine_Version          = "Aurora MySQL 3.04.0 (compatible with MySQL 8.0.28)"
+    component               =  "mysql"
     db_name = "dummy"
     instance_count = 1
     instance_class = "db_t3_small"
