@@ -1,4 +1,3 @@
-env  = "dev"
 
 #component ={
 #
@@ -37,6 +36,8 @@ env  = "dev"
 #  }
 #
 #}
+
+env  = "dev"
 
 tags = {
   company= "Xyz company"
