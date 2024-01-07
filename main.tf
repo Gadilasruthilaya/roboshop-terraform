@@ -47,7 +47,7 @@ module "rabbitmq"{
 module "rds"{
   source = "git::https://github.com/Gadilasruthilaya/tf-module-rds.git"
   for_each = var.rds
-  component = var.component
+  component = each.value["component"]
   env = var.env
   tags = var.tags
   engine = each.value["engine"]
