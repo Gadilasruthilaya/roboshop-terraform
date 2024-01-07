@@ -44,7 +44,7 @@ module "rabbitmq"{
   kms_id = var.Kms_id
 
 }
-module "rabbitmq"{
+module "rds"{
   source = "git::https://github.com/Gadilasruthilaya/tf-module-rds.git"
   for_each = var.rds
   component = var.component
