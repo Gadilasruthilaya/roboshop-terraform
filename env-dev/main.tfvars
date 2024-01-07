@@ -70,6 +70,8 @@ default_vpc_id = "vpc-0785c748739da1093"
 default_route_id= "rtb-007cec02789047c57"
 zone_id = "Z02630002CU3WENE8SD4L"
 allow_ssh_cidr = ["172.31.87.103/32"]
+Kms_id ="f6210ff7-c501-4ec2-a59c-9a3a2354d155"
+Kms_arn = "arn:aws:kms:us-east-1:190338077320:key/f6210ff7-c501-4ec2-a59c-9a3a2354d155"
 
 rabbitmq = {
   main = {
@@ -84,5 +86,7 @@ rds ={
     engine                  = "aurora-mysql"
     engine_version          = "5.7.mysql_aurora.2.03.2"
     db_name = "dummy"
+    instance_count = 1
+    instance_class = "db_t3_small"
   }
 }
