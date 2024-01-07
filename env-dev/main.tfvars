@@ -52,6 +52,6 @@ rds ={
     component               =  "mysql"
     db_name = "dummy"
     instance_count = 1
-    instance_class = "db_t3_small"
+    instance_class = "db.t3.small"
   }
 }
