@@ -53,5 +53,6 @@ rds ={
     db_name = "dummy"
     instance_count = 1
     instance_class = "db.t3.small"
+    skip_final_snapshot = true
   }
 }

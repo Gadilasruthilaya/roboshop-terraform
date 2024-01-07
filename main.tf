@@ -59,5 +59,5 @@ module "rds"{
   kms_key_arn = var.kms_key_arn
   instance_count = each.value["instance_count"]
   instance_class= each.value["instance_class"]
-  skip_final_snapshot = true
+  skip_final_snapshot = each.value["skip_final_snapshot"]
 }
