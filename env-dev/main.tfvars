@@ -14,8 +14,8 @@ tags = {
 vpc = {
   main ={
     cidr_block = "10.0.0.0/16"
-    subnets={
-      web ={
+    subnets = {
+      web = {
         cidr_block = ["10.0.0.0/24", "10.0.1.0/24"]
       }
       app ={
@@ -56,3 +56,12 @@ rds ={
     skip_final_snapshot = true
   }
 }
+
+elastic_cache ={
+  main ={
+    component = "redis"
+    node_type                  = "cache.t2.small"
+    parameter_group_name       = "default.redis3.2.cluster.on"
+  }
+}
+
