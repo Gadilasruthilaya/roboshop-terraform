@@ -53,8 +53,8 @@ module "rds"{
   engine = each.value["engine"]
   engine_Version = each.value["engine_Version"]
   db_name = each.value["db_name"]
-  subnet_ids =  lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnets", null), "db" , null), "subnet_ids", null)
-  sg_subnet_cidr = lookup(lookup(lookup(lookup(var.vpc, "main" , null ), "subnet_ids", null), "app" , null), "cidr_block", null)
+  subnet_ids =  lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), "db" , null), "subnet_ids", null)
+  sg_subnet_cidr = lookup(lookup(lookup(lookup(var.vpc, "main" , null ), "subnets", null), "app" , null), "cidr_block", null)
   vpc_id = lookup(lookup(module.vpc, "main", null ), "vpc_id" , null)
   kms_key_arn = var.kms_key_arn
   instance_count = each.value["instance_count"]
