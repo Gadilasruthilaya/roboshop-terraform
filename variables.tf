@@ -12,4 +12,5 @@ variable "zone_id" {}
 variable "rds" {}
 variable "kms_id" {}
 variable "kms_key_arn" {}
-variable "elastic_cache" {}
+variable "elasticache" {}
+variable "documentdb" {}

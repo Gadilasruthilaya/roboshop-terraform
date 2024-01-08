@@ -57,11 +57,26 @@ rds ={
   }
 }
 
-elastic_cache ={
+elasticache ={
   main ={
-    component = "redis"
+    component = "elasticache"
     node_type                  = "cache.t2.small"
-    parameter_group_name       = "default.redis3.2.cluster.on"
+    parameter_group_name       = "default.redis6.x.cluster.on"
+    num_node_groups         = 2
+    replicas_per_node_group = 1
+    engine                  = "redis"
+    engine_version          ="6.x"
+    node_type               = "cache.t3.micro"
+  }
+}
+
+documentdb={
+  main ={
+    engine                  = "docdb"
+    component               =  "docdb"
+    instance_class          = "db.t3.medium"
+    instance_count          =  1
+    engine_version          = "4.0.0"
   }
 }
 
