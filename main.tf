@@ -42,7 +42,7 @@ module "rabbitmq"{
   allow_ssh_cidr = var.allow_ssh_cidr
   zone_id = var.zone_id
   kms_id = var.kms_id
-S
+}
 module "rds"{
   source = "git::https://github.com/Gadilasruthilaya/tf-module-rds.git"
   for_each = var.rds
