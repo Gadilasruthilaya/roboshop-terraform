@@ -80,7 +80,7 @@ documentdb={
   }
 }
 
-alb{
+alb = {
   public ={
     name = "public"
     internal           = false
