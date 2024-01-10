@@ -88,8 +88,9 @@ alb = {
     subnet_refs     = "public"
 
   }
-  name ="private"
-  private ={
+
+  private = {
+    name ="private"
     internal           = true
     load_balancer_type = "application"
     subnet_refs     = "app"
