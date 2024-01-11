@@ -17,4 +17,3 @@ variable "documentdb" {}
 variable "alb" {}
 variable "apps" {}
 
-variable "priority" {}
