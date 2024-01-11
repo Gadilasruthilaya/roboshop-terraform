@@ -120,6 +120,7 @@ module "app_server"{
   subnets =  lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), each.value["subnet_refs"] , null), "subnet_ids", null)
   kms_id = var.kms_key_arn
   allow_ssh_cidr = var.allow_ssh_cidr
+  app_port = each.value["app_port"]
 }
 
 
