@@ -20,15 +20,7 @@ module "vpc"{
   default_route_id = var.default_route_id
 }
 
-#module "app"{
-#  source = "git::https://github.com/Gadilasruthilaya/tf-module-app.git"
-#  env = var.env
-#  tags = var.tags
-#  component = "test"
-#  subnet_id = lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), "app" , null), "subnet_ids",null)[0]
-#  vpc_id = lookup(lookup(module.vpc, "main", null ), "vpc_id" , null)
-#}
-#
+
 #module "rabbitmq"{
 #  source = "git::https://github.com/Gadilasruthilaya/tf-module-rabbitmq.git"
 #  for_each = var.rabbitmq
@@ -112,6 +104,26 @@ module "alb" {
 
 
 }
+
+module "app_server"{
+  source = "git::https://github.com/Gadilasruthilaya/tf-module-app.git"
+  for_each = var.apps
+  desired_capacity =each.value["desired_capacity"]
+  max_size  = each.value["max_size"]
+  min_size = each.value["min_size"]
+  instance_type = each.value["instance_type"]
+  env = var.env
+  tags = var.tags
+  component = each.value["component"]
+  sg_subnet_cidr = lookup(lookup(lookup(lookup(var.vpc, "main" , null ), "subnets", null), each.value["subnet_refs"] , null), "cidr_block", null)
+  vpc_id = lookup(lookup(module.vpc, "main", null ), "vpc_id" , null)
+  subnets =  lookup(lookup(lookup(lookup(module.vpc, "main" , null ), "subnet_ids", null), each.value["subnet_refs"] , null), "subnet_ids", null)
+  kms_id = var.kms_key_arn
+  allow_ssh_cidr = var.allow_ssh_cidr
+}
+
+
+
 
 
 

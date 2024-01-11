@@ -15,3 +15,4 @@ variable "kms_key_arn" {}
 variable "elasticache" {}
 variable "documentdb" {}
 variable "alb" {}
+variable "apps" {}

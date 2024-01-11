@@ -100,3 +100,16 @@ alb = {
 
 }
 
+apps ={
+
+  main ={
+    component          = "cart"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.micro"
+    subnet_refs        = "app"
+    app_port           = 8080
+  }
+}
+
