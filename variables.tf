@@ -16,6 +16,5 @@ variable "elasticache" {}
 variable "documentdb" {}
 variable "alb" {}
 variable "apps" {}
-variable "lb_dns_name" {}
-variable "listener_arn" {}
+
 variable "priority" {}
