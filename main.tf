@@ -121,7 +121,14 @@ module "app_server"{
   kms_id = var.kms_key_arn
   allow_ssh_cidr = var.allow_ssh_cidr
   app_port = each.value["app_port"]
+  lb_dns_name =  lookup(lookup(module.alb, each.value["lb_refs"], null ) "dns_name", null)
+  listener_arn =  lookup(lookup(module.alb, each.value["lb_refs"], null ) "listener_arn", null)
+  priority = each.value["priority"]
 }
+
+variable "lb_dns_name" {}
+variable "listener_arn" {}
+variable "priority" {}
 
 
 

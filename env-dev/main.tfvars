@@ -107,9 +107,11 @@ apps ={
     desired_capacity   = 1
     max_size           = 1
     min_size           = 1
-    instance_type      = "t3.micro"
+    instance_type      = "t3.small"
     subnet_refs        = "app"
     app_port           = 8080
+    lb_refs            = "private"
+    priority           = 100
   }
 }
 
