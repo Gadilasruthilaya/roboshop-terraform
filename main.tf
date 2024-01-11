@@ -126,9 +126,7 @@ module "app_server"{
   priority = each.value["priority"]
 }
 
-variable "lb_dns_name" {}
-variable "listener_arn" {}
-variable "priority" {}
+
 
 
 
