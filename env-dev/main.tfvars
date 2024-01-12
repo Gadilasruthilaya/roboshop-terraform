@@ -165,7 +165,7 @@ apps ={
     min_size           = 1
     instance_type      = "t3.small"
     subnet_refs        = "web"
-    app_port           = 8080
+    app_port           = 80
     lb_refs            = "private"
     priority           = 100
   }
