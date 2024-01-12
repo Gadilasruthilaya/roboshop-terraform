@@ -102,13 +102,69 @@ alb = {
 
 apps ={
 
-  main ={
+  cart ={
     component          = "cart"
     desired_capacity   = 1
     max_size           = 1
     min_size           = 1
     instance_type      = "t3.small"
     subnet_refs        = "app"
+    app_port           = 8080
+    lb_refs            = "private"
+    priority           = 101
+  }
+
+  catalogue ={
+    component          = "catalogue"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.small"
+    subnet_refs        = "app"
+    app_port           = 8080
+    lb_refs            = "private"
+    priority           = 102
+  }
+  user ={
+    component          = "user"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.small"
+    subnet_refs        = "app"
+    app_port           = 8080
+    lb_refs            = "private"
+    priority           = 103
+  }
+  shipping ={
+    component          = "shipping"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.small"
+    subnet_refs        = "app"
+    app_port           = 8080
+    lb_refs            = "private"
+    priority           = 104
+  }
+  payment ={
+    component          = "payment"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.small"
+    subnet_refs        = "app"
+    app_port           = 8080
+    lb_refs            = "private"
+    priority           = 105
+  }
+  frontend ={
+    component          = "frontend"
+    desired_capacity   = 1
+    max_size           = 1
+    min_size           = 1
+    instance_type      = "t3.small"
+    subnet_refs        = "web"
     app_port           = 8080
     lb_refs            = "private"
     priority           = 100
