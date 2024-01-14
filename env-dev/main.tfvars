@@ -124,6 +124,7 @@ apps ={
     app_port           = 8080
     lb_refs            = "private"
     priority           = 102
+    extra_param_access = ["arn:aws:ssm:us-east-1:190338077320:parameter/roboshop.dev.docdb.*"]
   }
   user ={
     component          = "user"
@@ -135,6 +136,7 @@ apps ={
     app_port           = 8080
     lb_refs            = "private"
     priority           = 103
+    extra_param_access = ["arn:aws:ssm:us-east-1:190338077320:parameter/roboshop.dev.docdb.*"]
   }
   shipping ={
     component          = "shipping"
@@ -146,6 +148,7 @@ apps ={
     app_port           = 8080
     lb_refs            = "private"
     priority           = 104
+    extra_param_access = ["arn:aws:ssm:us-east-1:190338077320:parameter/roboshop.dev.mysql.*"]
   }
   payment ={
     component          = "payment"
@@ -166,7 +169,7 @@ apps ={
     instance_type      = "t3.small"
     subnet_refs        = "web"
     app_port           = 80
-    lb_refs            = "private"
+    lb_refs            = "public"
     priority           = 100
   }
 }

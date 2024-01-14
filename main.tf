@@ -124,6 +124,8 @@ module "app_server"{
   lb_dns_name =  lookup(lookup(module.alb, each.value["lb_refs"], null ), "dns_name", null)
   listener_arn =  lookup(lookup(module.alb, each.value["lb_refs"], null ), "listener_arn", null)
   priority = each.value["priority"]
+  kms_key_arn = var.kms_key_arn
+  extra_param_access = try(each.value["extra_param_access"],[])
 }
 
 
