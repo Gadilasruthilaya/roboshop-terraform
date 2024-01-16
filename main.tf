@@ -127,6 +127,8 @@ module "app_server"{
   priority = each.value["priority"]
   kms_key_arn = var.kms_key_arn
   extra_param_access = try(each.value["extra_param_access"],[])
+  allow_prometheus_cidr = var.allow_prometheus_cidr
+
 }
 
 
