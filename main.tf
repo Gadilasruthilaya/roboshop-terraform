@@ -106,6 +106,7 @@ module "alb" {
 }
 
 module "app_server"{
+  depends_on = [module.vpc,module.rabbitmq, module.documentdb, module.elasticache, module.alb, module.rds]
   source = "git::https://github.com/Gadilasruthilaya/tf-module-app.git"
   for_each = var.apps
   desired_capacity =each.value["desired_capacity"]
